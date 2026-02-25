@@ -594,7 +594,180 @@
     
     <footer>
         <p>&copy; 2026 Holger Mundt – Web & App Design. Alle Rechte vorbehalten.</p>
-        <p><a href="mailto:holger@webdesign-kalbe.de">holger@webdesign-kalbe.de</a></p>
+        <p><a href="mailto:holger@webdesign-kalbe.de">holger@webdesign-kalbe.de</a> | <a href="#datenschutz">Datenschutz</a> | <a href="#impressum">Impressum</a></p>
     </footer>
+    
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(29, 29, 31, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 20px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+        display: none;
+    ">
+        <div style="flex: 1; color: white; font-size: 14px; line-height: 1.6;">
+            <p style="margin: 0; font-weight: 500; margin-bottom: 8px;">Cookies & Datenschutz</p>
+            <p style="margin: 0; color: #86868b;">Wir nutzen Cookies nur für essenzielle Funktionen. Keine Tracking oder Werbung. <a href="#datenschutz" style="color: #0071e3; text-decoration: none;">Mehr erfahren</a></p>
+        </div>
+        <div style="display: flex; gap: 12px; white-space: nowrap; flex-shrink: 0;">
+            <button id="cookie-accept" style="
+                background: #0071e3;
+                color: white;
+                border: none;
+                padding: 10px 24px;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 13px;
+                cursor: pointer;
+                transition: all 0.2s;
+            " onmouseover="this.style.background='#0a84ff'" onmouseout="this.style.background='#0071e3'">
+                Akzeptieren
+            </button>
+            <button id="cookie-reject" style="
+                background: transparent;
+                color: white;
+                border: 1px solid #424245;
+                padding: 10px 24px;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 13px;
+                cursor: pointer;
+                transition: all 0.2s;
+            " onmouseover="this.style.borderColor='#555'" onmouseout="this.style.borderColor='#424245'">
+                Ablehnen
+            </button>
+        </div>
+    </div>
+    
+    <!-- MODAL: DATENSCHUTZ -->
+    <div id="datenschutz" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 2000; overflow-y: auto;">
+        <div style="max-width: 800px; margin: 40px auto; background: white; border-radius: 16px; padding: 48px; position: relative;">
+            <button onclick="document.getElementById('datenschutz').style.display='none'" style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #86868b;
+            ">×</button>
+            
+            <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.5px;">Datenschutzerklärung</h2>
+            
+            <div style="font-size: 15px; line-height: 1.8; color: #555;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">1. Verantwortlicher</h3>
+                <p>Holger Mundt<br>Kalbe, 27419<br>Deutschland<br>Email: holger@webdesign-kalbe.de</p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">2. Erfasste Daten</h3>
+                <p>Diese Website erfasst nur essentielle Daten, die für die Funktionsfähigkeit notwendig sind:</p>
+                <ul style="margin: 12px 0 12px 20px;">
+                    <li>Kontaktformular: Name, Email, Nachricht (freiwillig)</li>
+                    <li>Server-Logs: IP-Adresse, Browser, Zeitstempel (automatisch)</li>
+                </ul>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">3. Cookies</h3>
+                <p>Wir setzen nur technisch notwendige Cookies (z.B. Session-Management). Keine Tracking- oder Werbe-Cookies.</p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">4. Ihre Rechte</h3>
+                <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Datenportabilität. Kontaktieren Sie: holger@webdesign-kalbe.de</p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">5. Speicherdauer</h3>
+                <p>Kontaktdaten werden bis zur Beantwortung gespeichert, dann gelöscht. Server-Logs: 30 Tage.</p>
+                
+                <p style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e5e7; color: #86868b; font-size: 13px;">
+                    Letzte Aktualisierung: 2026
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL: IMPRESSUM -->
+    <div id="impressum" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 2000; overflow-y: auto;">
+        <div style="max-width: 800px; margin: 40px auto; background: white; border-radius: 16px; padding: 48px; position: relative;">
+            <button onclick="document.getElementById('impressum').style.display='none'" style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #86868b;
+            ">×</button>
+            
+            <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.5px;">Impressum</h2>
+            
+            <div style="font-size: 15px; line-height: 1.8; color: #555;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">Angaben gemäß § 5 TMG</h3>
+                <p>
+                    <strong>Holger Mundt</strong><br>
+                    Kalbe<br>
+                    27419 Deutschland
+                </p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">Kontakt</h3>
+                <p>
+                    Email: <a href="mailto:holger@webdesign-kalbe.de" style="color: #0071e3; text-decoration: none;">holger@webdesign-kalbe.de</a>
+                </p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">Haftungsausschluss</h3>
+                <p>Der Autor übernimmt keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen.</p>
+                
+                <h3 style="font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;">Urheberrecht</h3>
+                <p>Alle Inhalte dieser Website sind urheberrechtlich geschützt. Reproduktion ohne ausdrückliche Genehmigung ist untersagt.</p>
+                
+                <p style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e5e7; color: #86868b; font-size: 13px;">
+                    Letzte Aktualisierung: 2026
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Cookie Banner
+        const cookieBanner = document.getElementById('cookie-banner');
+        const cookieAccept = document.getElementById('cookie-accept');
+        const cookieReject = document.getElementById('cookie-reject');
+        
+        // Zeige Banner wenn keine Cookie-Entscheidung gespeichert
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieBanner.style.display = 'flex';
+        }
+        
+        // Akzeptieren
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.style.display = 'none';
+        });
+        
+        // Ablehnen
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieBanner.style.display = 'none';
+        });
+        
+        // Modale schließen beim Außenklick
+        document.getElementById('datenschutz').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('datenschutz')) {
+                document.getElementById('datenschutz').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('impressum').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('impressum')) {
+                document.getElementById('impressum').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
