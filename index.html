@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Holger Mundt – Web & App Design aus Kalbe. Moderne Websites für Handwerksbetriebe und lokale Unternehmen.">
+    <title>Holger Mundt – Web & App Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            height: 56px;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            color: #1d1d1f;
+        }
+        
+        nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0 24px;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #1d1d1f;
+        }
+        
+        /* MAIN CONTENT */
+        main {
+            margin-top: 56px;
+        }
+        
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 48px;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+            animation: fadeInHero 0.8s ease-out;
+        }
+        
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            color: #1d1d1f;
+        }
+        
+        .hero-tagline {
+            font-size: 24px;
+            color: #86868b;
+            margin-bottom: 32px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #1d1d1f;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid #1d1d1f;
+            letter-spacing: -0.3px;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: #1d1d1f;
+            transform: scale(1.02);
+        }
+        
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+        
+        /* SECTION */
+        section {
+            padding: 120px 0;
+        }
+        
+        section.light {
+            background: #fafafa;
+        }
+        
+        section h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 80px;
+            text-align: center;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        
+        /* PORTFOLIO */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        
+        .portfolio-item {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .portfolio-item:nth-child(1) { animation-delay: 0.2s; }
+        .portfolio-item:nth-child(2) { animation-delay: 0.4s; }
+        .portfolio-item:nth-child(3) { animation-delay: 0.6s; }
+        .portfolio-item:nth-child(4) { animation-delay: 0.8s; }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .portfolio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .portfolio-text h3 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+        
+        .portfolio-text p {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .portfolio-text ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        
+        .portfolio-text li {
+            font-size: 15px;
+            color: #555;
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .portfolio-text li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #86868b;
+            font-weight: 600;
+        }
+        
+        .portfolio-image {
+            background: #f5f5f7;
+            border-radius: 16px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-image {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            transform: scale(1.02);
+        }
+        
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 80px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        
+        .feature p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* PROCESS */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .process-step {
+            text-align: center;
+        }
+        
+        .step-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #d5d5d7;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+        }
+        
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        
+        .process-step p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            padding: 120px 48px;
+            text-align: center;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 32px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* FOOTER */
+        footer {
+            padding: 60px 48px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: #86868b;
+            margin-bottom: 8px;
+        }
+        
+        footer a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .hero-tagline {
+                font-size: 20px;
+            }
+            
+            section h2 {
+                font-size: 40px;
+            }
+            
+            .portfolio-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features,
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            nav,
+            .container {
+                padding: 0 24px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            header {
+                height: 52px;
+            }
+            
+            nav {
+                padding: 0 16px;
+            }
+            
+            main {
+                margin-top: 52px;
+            }
+            
+            .hero {
+                padding: 60px 16px;
+                min-height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+            
+            .hero-tagline {
+                font-size: 18px;
+                margin-bottom: 24px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            section h2 {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+            
+            .portfolio-text h3 {
+                font-size: 28px;
+            }
+            
+            .portfolio-text p {
+                font-size: 15px;
+            }
+            
+            nav a {
+                margin: 0 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Holger Mundt</div>
+            <div>
+                <a href="#portfolio">Arbeiten</a>
+                <a href="#prozess">Prozess</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Web & App Design für lokale Unternehmen</h1>
+                <p class="hero-tagline">Web & App Design aus Kalbe</p>
+                <p>Moderne, professionelle Websites für Handwerksbetriebe und lokale Firmen. Wir machen dein Unternehmen online sichtbar.</p>
+                <a href="#kontakt" class="cta-button">Demo anfordern</a>
+            </div>
+        </section>
+        
+        <section id="portfolio">
+            <div class="container">
+                <h2>Ausgewählte Arbeiten</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <div class="portfolio-text">
+                                <h3>H. Brunkhorst</h3>
+                                <p>Land- und Stalltechnik. Moderne Website für professionelle Präsentation von Leistungen und Produkten.</p>
+                                <ul>
+                                    <li>Responsive Design</li>
+                                    <li>Kontaktformular & CRM</li>
+                                    <li>SEO-optimiert</li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-image">🚜</div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <div class="portfolio-image">🪜</div>
+                            <div class="portfolio-text">
+                                <h3>Tischlerei Harms – Redesign</h3>
+                                <p>Kompletter Redesign einer bestehenden Website. Modern, professionell, mit Portfolio-Galerie.</p>
+                                <ul>
+                                    <li>Modernisierung</li>
+                                    <li>Portfolio-Sektion</li>
+                                    <li>Bessere User Experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <div class="portfolio-text">
+                                <h3>Tischlerei H.-W. Holst</h3>
+                                <p>Professionelle Website für traditionsreiche Tischlerei. Mit Kundenbewertungen und modernem Design.</p>
+                                <ul>
+                                    <li>Hochwertige Bewertungen</li>
+                                    <li>Moderne Ästhetik</li>
+                                    <li>Mobile-First</li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-image">⭐</div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <div class="portfolio-image">🌲</div>
+                            <div class="portfolio-text">
+                                <h3>Forstservice Kalbe</h3>
+                                <p>Website für Forstunternehmen mit Instagram-Integration und modernem Design. Zeigt Erfolgsgeschichten.</p>
+                                <ul>
+                                    <li>Social Media Integration</li>
+                                    <li>Professionelle Präsentation</li>
+                                    <li>Optimiert für Conversion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="light">
+            <div class="container">
+                <h2>Was wir bieten</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Design</h3>
+                        <p>Modernes, professionelles Design im Apple-Stil. Clean, schnell, benutzerfreundlich.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Performance</h3>
+                        <p>Optimiert für schnelle Ladezeiten und perfekte Mobile-Erfahrung auf allen Geräten.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>SEO</h3>
+                        <p>Von Anfang an optimiert für Suchmaschinen. Dein Unternehmen wird gefunden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="prozess">
+            <div class="container">
+                <h2>Unser Prozess</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Beratung</h3>
+                        <p>Wir verstehen dein Unternehmen, deine Ziele und deine Zielgruppe.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Demo</h3>
+                        <p>Du siehst erste Designs und Konzepte. Feedback ist wichtig.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Launch</h3>
+                        <p>Deine neue Website geht live und startet deine Online-Präsenz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="light" id="kontakt">
+            <div class="cta-section">
+                <h2>Bereit für eine neue Website?</h2>
+                <p>Kontaktiere mich für eine kostenlose Beratung und um deine persönliche Demo zu sehen.</p>
+                <a href="mailto:holger@webdesign-kalbe.de" class="cta-button">holger@webdesign-kalbe.de</a>
+                <p style="margin-top: 32px; font-size: 15px; color: #86868b;">Kalbe, Niedersachsen</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Holger Mundt – Web & App Design. Alle Rechte vorbehalten.</p>
+        <p><a href="mailto:holger@webdesign-kalbe.de">holger@webdesign-kalbe.de</a></p>
+    </footer>
+</body>
+</html>
